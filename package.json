@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "stylelint:fix": "stylelint --fix \"**/*.tsx\"",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.tsx": "eslint --fix",
+    "*.ts": "eslint --fix"
   },
   "dependencies": {
     "@wits/next-themes": "^0.2.16",
@@ -54,7 +61,9 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "globby": "^13.1.4",
+    "husky": "^8.0.3",
     "inquirer": "^9.2.7",
+    "lint-staged": "^13.2.2",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
